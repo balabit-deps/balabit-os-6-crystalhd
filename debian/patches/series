@@ -1,0 +1,6 @@
+multiarch-support.patch
+exclude-firmware.patch
+driver-build-failure-fix.patch
+gcc-opts-fix.patch
+spelling-fix.patch
+gst-Port-to-GStreamer-1.0-API.patch

@@ -1,0 +1,94 @@
+crystalhd (1:0.0~git20110715.fdd2f19-11build1) vivid; urgency=medium
+
+  * No change rebuild to get debug symbols on all architectures.
+
+ -- Brian Murray <brian@ubuntu.com>  Mon, 15 Dec 2014 09:00:23 -0800
+
+crystalhd (1:0.0~git20110715.fdd2f19-11) unstable; urgency=medium
+
+  * Fix difference in function names on i386 and on amd64 in symbols file
+    (Closes: #745689, #745922)
+
+ -- Balint Reczey <balint@balintreczey.hu>  Sun, 27 Apr 2014 23:48:04 +0200
+
+crystalhd (1:0.0~git20110715.fdd2f19-10) unstable; urgency=low
+
+  [ Guido Günther ]
+  * Port to gstreamer 1.0 API (Closes: #702372)
+
+  [ Balint Reczey ]
+  * Build-depend on debhelper >= 9
+  * Bump standards version, no changes needed
+  * Use autoreconf and build-depend on autotools-dev and dh-autoreconf
+  * Add symbols files
+  * Adopt package in the name of the Debian Multimedia Maintainers
+    (Closes: #743610)
+
+ -- Balint Reczey <balint@balintreczey.hu>  Mon, 14 Apr 2014 21:20:28 +0200
+
+crystalhd (1:0.0~git20110715.fdd2f19-9) unstable; urgency=high
+
+  * New package upload with just fixes to remove dkms package.
+  * Revert bump to Standards-Version 3.9.4.
+  * Revert build with hardening options to satisfy Wheezy release goal.
+
+ -- Andres Mejia <amejia@debian.org>  Sat, 02 Mar 2013 17:43:59 -0500
+
+crystalhd (1:0.0~git20110715.fdd2f19-8) unstable; urgency=high
+
+  * Remove dkms package which contained buggy driver.
+    Driver already existed in mainline kernel. Any issues with the driver
+    should be directed to the kernel package.
+    (Closes: #682252)
+    (Closes: #699470)
+  * Bump to Standards-Version 3.9.4.
+  * Build with hardening options to satisfy Wheezy release goal.
+
+ -- Andres Mejia <amejia@debian.org>  Sat, 02 Mar 2013 13:34:36 -0500
+
+crystalhd (1:0.0~git20110715.fdd2f19-7) unstable; urgency=low
+
+  * Include udev rules for crystalhd-dkms.
+
+ -- Andres Mejia <amejia@debian.org>  Mon, 30 Apr 2012 13:48:40 -0400
+
+crystalhd (1:0.0~git20110715.fdd2f19-6) unstable; urgency=low
+
+  * Make dev package multiarch installable.
+  * Set Standards-Version to 3.9.3.
+
+ -- Andres Mejia <amejia@debian.org>  Fri, 16 Mar 2012 17:02:49 -0400
+
+crystalhd (1:0.0~git20110715.fdd2f19-5) unstable; urgency=low
+
+  * Update location to source in crystalhd-get-orig-source script.
+  * Make dpkg-source options permenant.
+  * Add Suggests of firmware-crystalhd.
+  * Add support for multiarch for libcrystalhd.
+
+ -- Andres Mejia <amejia@debian.org>  Wed, 11 Jan 2012 00:27:57 -0500
+
+crystalhd (1:0.0~git20110715.fdd2f19-4) unstable; urgency=low
+
+  * Make crystalhd package build only on amd64 and i386.
+
+ -- Andres Mejia <amejia@debian.org>  Sun, 17 Jul 2011 12:48:39 -0400
+
+crystalhd (1:0.0~git20110715.fdd2f19-3) unstable; urgency=low
+
+  * Make crystalhd package build only on linux machines.
+  * Fix spelling errors.
+
+ -- Andres Mejia <amejia@debian.org>  Sun, 17 Jul 2011 11:39:43 -0400
+
+crystalhd (1:0.0~git20110715.fdd2f19-2) unstable; urgency=low
+
+  * Fix build of crystalhd on non i386 and amd64 systems.
+
+ -- Andres Mejia <amejia@debian.org>  Sun, 17 Jul 2011 11:08:11 -0400
+
+crystalhd (1:0.0~git20110715.fdd2f19-1) unstable; urgency=low
+
+  * Initial release. (Closes: #577130)
+
+ -- Andres Mejia <amejia@debian.org>  Sat, 16 Jul 2011 10:31:27 -0400

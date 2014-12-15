@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+EXTRA_INCLUDES = -I$(CURDIR)/include \
+	-I$(CURDIR)/linux_lib/libcrystalhd
+
+EXTRA_LD_PATH = -L$(CURDIR)/linux_lib/libcrystalhd
+
+%:
+	dh $@ --with autoreconf
+
+override_dh_auto_build:
+	make -C linux_lib/libcrystalhd
+	cd filters/gst/gst-plugin && \
+		./configure --prefix=/usr CFLAGS="$(EXTRA_INCLUDES)" \
+		LDFLAGS="$(EXTRA_LD_PATH)"
+	make -C filters/gst/gst-plugin
+
+override_dh_auto_install:
+	make install -C linux_lib/libcrystalhd DESTDIR=$(CURDIR)/debian/tmp \
+		LIBDIR=/usr/lib/$(DEB_HOST_MULTIARCH)
+	make install -C filters/gst/gst-plugin DESTDIR=$(CURDIR)/debian/tmp
+
+override_dh_auto_clean:
+	dh_clean
+	make clean -C linux_lib/libcrystalhd
+	[ ! -f filters/gst/gst-plugin/Makefile ] || \
+		make clean distclean -C filters/gst/gst-plugin

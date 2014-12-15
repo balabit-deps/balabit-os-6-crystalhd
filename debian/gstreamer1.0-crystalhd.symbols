@@ -1,0 +1,3 @@
+libgstbcmdec.so gstreamer1.0-crystalhd #MINVER#
+ gst_bcm_dec_get_type@Base 1:0.0~git20110715.fdd2f19
+ gst_plugin_desc@Base 1:0.0~git20110715.fdd2f19
